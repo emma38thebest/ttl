@@ -1,0 +1,291 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix crm: <http://erlangen-crm.org/current/> .
+@prefix crmsci: <http://www.cidoc-crm.org/crmsci/> .
+@prefix crmtex: <http://www.cidoc-crm.org/crmtex/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix edh: <http://edh-www.adw.uni-heidelberg.de/edh/ontology#> .
+@prefix epi: <https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382> .
+@prefix epnet: <http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#> .
+@prefix epont: <https://w3id.org/epont/ontology/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix lawd: <http://lawd.info/ontology/> .
+@prefix nom: <http://nomisma.org/ontology#> .
+@prefix ns1: <http://erlangen-crm.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+cc:licence a owl:AnnotationProperty .
+
+edh:Contributor a owl:Class ;
+    rdfs:subClassOf lawd:Person ;
+    owl:disjointWith epont:Writing .
+
+edh:hasDiplomaticText a owl:AnnotationProperty ;
+    rdfs:domain edh:Inscription,
+        crmtex:TX6_Transcription .
+
+edh:hasEditionText a owl:AnnotationProperty ;
+    rdfs:domain epont:Edition .
+
+edh:hasWorkstatus a owl:ObjectProperty ;
+    rdfs:domain crmtex:TX6_Transcription ;
+    rdfs:range edh:Workstatus .
+
+edh:representsTypeOfInscription a owl:ObjectProperty ;
+    rdfs:domain edh:Inscription ;
+    rdfs:range edh:TypeOfInscription .
+
+edh:representsTypeOfMonument a owl:AnnotationProperty,
+        owl:ObjectProperty ;
+    rdfs:domain crm:E84_Information_Carrier ;
+    rdfs:range edh:TypeOfMonument ;
+    rdfs:subPropertyOf nom:hasObjectType .
+
+crm:P130_shows_features_of a owl:ObjectProperty ;
+    rdfs:domain crmtex:TX9_Glyph ;
+    rdfs:range crm:E47_Spatial_Coordinates .
+
+crm:P2_has_type a owl:ObjectProperty ;
+    rdfs:domain crmtex:TX9_Glyph ;
+    rdfs:range crmtex:TX8_Grapheme .
+
+crm:P4_has_time_span a owl:AnnotationProperty .
+
+crm:P53_has_former_or_current_location a owl:AnnotationProperty ;
+    rdfs:subPropertyOf lawd:where .
+
+crm:P56_is_found_on a owl:AnnotationProperty .
+
+nom:hasDepth a owl:AnnotationProperty ;
+    rdfs:subPropertyOf crm:P43_has_dimension .
+
+nom:hasDiameter a owl:AnnotationProperty ;
+    rdfs:subPropertyOf crm:P43_has_dimension .
+
+nom:hasEndDate a owl:AnnotationProperty ;
+    rdfs:subPropertyOf crm:P4_has_time-span .
+
+nom:hasHeight a owl:AnnotationProperty ;
+    rdfs:subPropertyOf crm:P43_has_dimension .
+
+nom:hasMaterial a owl:AnnotationProperty ;
+    rdfs:subPropertyOf crm:P45_consists_of .
+
+nom:hasWeight a owl:AnnotationProperty ;
+    rdfs:subPropertyOf crm:P43_has_dimension .
+
+nom:hasWidth a owl:AnnotationProperty ;
+    rdfs:subPropertyOf crm:P43_has_dimension .
+
+nom:representsObjectType a owl:AnnotationProperty ;
+    rdfs:subPropertyOf nom:hasObjectType .
+
+dc:language a owl:AnnotationProperty .
+
+dc:title a owl:AnnotationProperty .
+
+dcterms:creator a owl:AnnotationProperty .
+
+dcterms:description a owl:AnnotationProperty .
+
+pav:isauthoredBy a owl:AnnotationProperty .
+
+crmsci:O6_observed_by a owl:ObjectProperty .
+
+crmtex:TXP1_used_a_writing_system a owl:AnnotationProperty .
+
+crmtex:TXP2_has_component a owl:ObjectProperty ;
+    rdfs:domain crmtex:TX1_Written_Text ;
+    rdfs:range crmtex:TX9_Glyph .
+
+crmtex:TXP3_is_rendered_by a owl:ObjectProperty .
+
+epnet:InformationCarrier a owl:Class ;
+    rdfs:subClassOf crm:E84_Information_Carrier .
+
+epnet:TemporalEntity a owl:Class ;
+    rdfs:subClassOf crm:E2_Temporal_Entity .
+
+epnet:hasProductionDate a owl:AnnotationProperty ;
+    rdfs:subPropertyOf crm:P4_has_time-span .
+
+epnet:hasStartDate a owl:AnnotationProperty ;
+    rdfs:subPropertyOf crm:P4_has_time-span .
+
+epnet:isTranscribedBy a owl:ObjectProperty ;
+    rdfs:domain epnet:Inscription ;
+    rdfs:range edh:Inscription .
+
+owl:topObjectProperty rdfs:domain crmtex:TX6_Transcription ;
+    rdfs:range epont:Edition .
+
+geo1:lat a owl:AnnotationProperty ;
+    rdfs:domain crm:E47_Spatial_Coordinates ;
+    rdfs:subPropertyOf lawd:where .
+
+geo1:long a owl:AnnotationProperty ;
+    rdfs:domain crm:E47_Spatial_Coordinates ;
+    rdfs:subPropertyOf lawd:where .
+
+geo1:spatialThing a owl:AnnotationProperty ;
+    rdfs:subPropertyOf lawd:where .
+
+foaf:name a owl:AnnotationProperty .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/a> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/b> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/c> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/d> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/dot> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/e> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/f> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/g> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/h> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/hedera> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/i> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/k> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/l> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/m> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/n> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/o> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/p> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/q> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/r> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/s> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/t> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/v> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/x> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/y> a crmtex:TX9_Glyph .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Glyph/z> a crmtex:TX9_Glyph .
+
+epont:P108_was_produced_by a owl:ObjectProperty .
+
+epont:P20_had_specific_purpose a owl:ObjectProperty .
+
+epont:P56_is_found_on a owl:ObjectProperty .
+
+epont:P92_brought_into_existence a owl:ObjectProperty .
+
+epont:Reading a owl:Class ;
+    rdfs:subClassOf lawd:Person .
+
+epont:carriesText a owl:ObjectProperty ;
+    rdfs:domain crm:E84_Information_Carrier ;
+    rdfs:range crmtex:TX1_Written_Text ;
+    rdfs:subPropertyOf crm:P56_bears_feature .
+
+epont:hasEdition a owl:ObjectProperty ;
+    rdfs:domain crmtex:TX6_Transcription ;
+    rdfs:range epont:Edition ;
+    rdfs:subPropertyOf crm:P94_has_created .
+
+edh:TypeOfInscription a owl:Class .
+
+edh:TypeOfMonument a owl:Class .
+
+edh:Workstatus a owl:Class .
+
+crm:E2_Temporal_Entity a owl:Class .
+
+crm:P45_consists_of a owl:AnnotationProperty .
+
+crm:P56_bears_feature a owl:ObjectProperty .
+
+crm:P94_has_created a owl:ObjectProperty .
+
+lawd:Edition a owl:Class .
+
+crmtex:TX8_Grapheme a owl:Class .
+
+epnet:Inscription a owl:Class .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Reading> a crmtex:TX5_Reading ;
+    ns1:P20_had_specific_purpose <https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Transcription> ;
+    crmtex:TXP3_is_rendered_by <https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Transcription> ;
+    foaf:name "Etude" .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Writing> a ns1:E33_Linguistic_Object ;
+    ns1:P92_brought_into_existence <https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/WrittenWork> ;
+    crmtex:TXP1_used_writing_system "Latin" .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/WrittenText> a crmtex:TX1_Written_Text ;
+    ns1:P108_was_produced_by <https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Writing> ;
+    ns1:P56_is_found_on epi: ;
+    nom:hasEndDate "299" ;
+    nom:hasStartDate "1" ;
+    crmsci:O6_observed_by <https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Reading> ;
+    foaf:page epi: .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/WrittenWork> a lawd:WrittenWork .
+
+epont:Writing a owl:Class ;
+    rdfs:subClassOf lawd:Person .
+
+nom:hasObjectType a owl:AnnotationProperty .
+
+epi: a crm:E22_Human_made_object ;
+    rdfs:label "Dédicace fragmentaire à une divinité auguste" ;
+    edh:representsTypeOfMonument "http://www.eagle-network.eu/voc/objtyp/lod/260.html" ;
+    ns1:P55_has_current_location "Musée de Cherchell" ;
+    nom:Material "marbre" ;
+    nom:hasObjectType "plaque" ;
+    pav:isauthoredBy "Epicherchell Corpus des inscriptions antiques de Cherchell - Centre Camille Jullian" ;
+    pav:licence "Licensed under a Creative Commons CC BY-NC-ND 4.0." ;
+    geo1:spatialThing "http://www.geonames.org/2501440" ;
+    epont:carriesText <https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/WrittenText> .
+
+<https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Transcription> a crmtex:TX6_Transcription ;
+    edh:hasDiplomaticText "inconnu" ;
+    edh:hasEditionText " ? [---]Ẹ ▴ AṾG̣ [--- ?] [---]ẸNSES [---] " ;
+    edh:representsTypeOfInscription "religieuse" ;
+    ns1:P49_created <https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/TranscriptionText> ;
+    epont:hasEdition <https://ccj-epicherchel.huma-num.fr/interface/admin/build/fiche.php?id=382/Edition> .
+
+edh:Inscription a owl:Class .
+
+crm:E47_Spatial_Coordinates a owl:Class .
+
+crm:E84_Information_Carrier a owl:Class .
+
+lawd:Person a owl:Class .
+
+crmtex:TX1_Written_Text a owl:Class .
+
+epont:Edition a owl:Class ;
+    rdfs:subClassOf lawd:Edition .
+
+lawd:where a owl:AnnotationProperty .
+
+crm:P43_has_dimension a owl:AnnotationProperty .
+
+crmtex:TX6_Transcription a owl:Class .
+
+crmtex:TX9_Glyph a owl:Class .
+
