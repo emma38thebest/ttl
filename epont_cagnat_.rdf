@@ -1,0 +1,1237 @@
+@prefix : <https://w3id.org/epont/ontology/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix current: <http://erlangen-crm.org/current/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ontology: <http://nomisma.org/ontology#> .
+@prefix ontology1: <http://edh-www.adw.uni-heidelberg.de/edh/ontology#> .
+@prefix ontology2: <http://lawd.info/ontology/> .
+@prefix EPNet-ONTOP_Ontology: <http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#> .
+@base <https://w3id.org/epont/ontology/> .
+
+<https://w3id.org/epont/ontology/> rdf:type owl:Ontology ;
+                                    owl:versionIRI <https://w3id.org/epont/ontology/0.1/> ;
+                                    owl:imports ontology1: ,
+                                                <http://lawd.info/ontology/1.0/> ,
+                                                ontology: ,
+                                                <http://www.cidoc-crm.org/crmtex/0.1/> ,
+                                                <http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology> ,
+                                                <https://w3id.org/executionTechnique/ontology/0.1> ;
+                                    dc:language :en ;
+                                    dc:title "Epigraphic Ontology" ;
+                                    dcterms:creator "Achille Felicetti" ,
+                                                    "Francesca Murano" ,
+                                                    "Frank Grieshaber" ,
+                                                    "Jonathan Prag" ,
+                                                    "Pietro Maria Liuzzo" ,
+                                                    "Silvia Evangelisti" ;
+                                    dcterms:description "This ontology merges LAWD, CRMtex, the EDH Ontology, the EPNet ontology for OBDI and the Execution Technique Ontology, to support modeling of information about inscriptions." .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://edh-www.adw.uni-heidelberg.de/edh/ontology#hasDiplomaticText
+ontology1:hasDiplomaticText rdf:type owl:AnnotationProperty ;
+                            rdfs:domain <http://www.cidoc-crm.org/crmtex/TX6_Transcription> .
+
+
+###  http://edh-www.adw.uni-heidelberg.de/edh/ontology#hasEditionText
+ontology1:hasEditionText rdf:type owl:AnnotationProperty ;
+                         rdfs:domain :Edition .
+
+
+###  http://edh-www.adw.uni-heidelberg.de/edh/ontology#representsTypeOfMonument
+ontology1:representsTypeOfMonument rdf:type owl:AnnotationProperty ;
+                                   rdfs:range ontology1:TypeOfMonument .
+
+
+###  http://erlangen-crm.org/current/P43_has_dimension
+current:P43_has_dimension rdf:type owl:AnnotationProperty .
+
+
+###  http://erlangen-crm.org/current/P45_consists_of
+current:P45_consists_of rdf:type owl:AnnotationProperty .
+
+
+###  http://erlangen-crm.org/current/P4_has_time-span
+current:P4_has_time-span rdf:type owl:AnnotationProperty ;
+                         rdfs:range current:E52_Time-Span ,
+                                    EPNet-ONTOP_Ontology:TemporalEntity .
+
+
+###  http://erlangen-crm.org/current/P53_has_former_or_current_location
+current:P53_has_former_or_current_location rdf:type owl:AnnotationProperty ;
+                                           rdfs:range ontology2:Place .
+
+
+###  http://lawd.info/ontology/where
+ontology2:where rdf:type owl:AnnotationProperty .
+
+
+###  http://nomisma.org/ontology#hasDepth
+ontology:hasDepth rdf:type owl:AnnotationProperty ;
+                  rdfs:subPropertyOf current:P43_has_dimension .
+
+
+###  http://nomisma.org/ontology#hasDiameter
+ontology:hasDiameter rdf:type owl:AnnotationProperty ;
+                     rdfs:subPropertyOf current:P43_has_dimension .
+
+
+###  http://nomisma.org/ontology#hasEndDate
+ontology:hasEndDate rdf:type owl:AnnotationProperty .
+
+
+###  http://nomisma.org/ontology#hasHeight
+ontology:hasHeight rdf:type owl:AnnotationProperty ;
+                   rdfs:subPropertyOf current:P43_has_dimension .
+
+
+###  http://nomisma.org/ontology#hasMaterial
+ontology:hasMaterial rdf:type owl:AnnotationProperty ;
+                     rdfs:subPropertyOf current:P45_consists_of ;
+                     rdfs:domain current:E84_Information_Carrier .
+
+
+###  http://nomisma.org/ontology#hasObjectType
+ontology:hasObjectType rdf:type owl:AnnotationProperty .
+
+
+###  http://nomisma.org/ontology#hasStartDate
+ontology:hasStartDate rdf:type owl:AnnotationProperty .
+
+
+###  http://nomisma.org/ontology#hasWeight
+ontology:hasWeight rdf:type owl:AnnotationProperty ;
+                   rdfs:subPropertyOf current:P43_has_dimension .
+
+
+###  http://nomisma.org/ontology#hasWidth
+ontology:hasWidth rdf:type owl:AnnotationProperty ;
+                  rdfs:subPropertyOf current:P43_has_dimension .
+
+
+###  http://nomisma.org/ontology#representsObjectType
+ontology:representsObjectType rdf:type owl:AnnotationProperty ;
+                              rdfs:range ontology1:TypeOfMonument .
+
+
+###  http://purl.org/dc/elements/1.1/language
+dc:language rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#hasProductionDate
+EPNet-ONTOP_Ontology:hasProductionDate rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://edh-www.adw.uni-heidelberg.de/edh/ontology#hasWorkstatus
+ontology1:hasWorkstatus rdf:type owl:ObjectProperty ;
+                        rdfs:domain <http://www.cidoc-crm.org/crmtex/TX6_Transcription> ;
+                        rdfs:range ontology1:Workstatus .
+
+
+###  http://edh-www.adw.uni-heidelberg.de/edh/ontology#representsTypeOfInscription
+ontology1:representsTypeOfInscription rdf:type owl:ObjectProperty ;
+                                      rdfs:domain ontology1:Inscription ;
+                                      rdfs:range ontology1:TypeOfInscription .
+
+
+###  http://edh-www.adw.uni-heidelberg.de/edh/ontology#representsTypeOfMonument
+ontology1:representsTypeOfMonument rdf:type owl:ObjectProperty ;
+                                   owl:equivalentProperty <https://nomisma.org/ontology#representsObjectType> ;
+                                   rdfs:subPropertyOf ontology:hasObjectType ;
+                                   rdfs:domain current:E84_Information_Carrier .
+
+
+###  http://erlangen-crm.org/current/O8_Was_observed_by
+current:O8_Was_observed_by rdf:type owl:ObjectProperty ;
+                           rdfs:domain ontology1:Inscription ;
+                           rdfs:range <http://www.cidoc-crm.org/crmtex/TX5_Reading> .
+
+
+###  http://erlangen-crm.org/current/P138_represents
+current:P138_represents rdf:type owl:ObjectProperty ;
+                        rdfs:domain current:Image ;
+                        rdfs:range <http://www.cidoc-crm.org/crmtex/TX9_Glyph> .
+
+
+###  http://erlangen-crm.org/current/P138i_has_represation
+current:P138i_has_represation rdf:type owl:ObjectProperty ;
+                              rdfs:domain current:E84_Information_Carrier ;
+                              rdfs:range current:Image .
+
+
+###  http://erlangen-crm.org/current/P168_place_is_defined_by
+current:P168_place_is_defined_by rdf:type owl:ObjectProperty ;
+                                 rdfs:domain <http://www.cidoc-crm.org/crmtex/TX9_Glyph> ;
+                                 rdfs:range current:Spatial_Coordinates .
+
+
+###  http://erlangen-crm.org/current/P2_has_type
+current:P2_has_type rdf:type owl:ObjectProperty ;
+                    rdfs:domain ontology1:Inscription ,
+                                <http://www.cidoc-crm.org/crmtex/TX9_Glyph> ,
+                                <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> ;
+                    rdfs:range current:E55_Type ,
+                               current:E73_Information_Object ,
+                               <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/P46_is_composed_of
+current:P46_is_composed_of rdf:type owl:ObjectProperty ;
+                           rdfs:domain current:E84_Information_Carrier ;
+                           rdfs:range current:Object .
+
+
+###  http://erlangen-crm.org/current/P4_has_time-span
+current:P4_has_time-span rdf:type owl:ObjectProperty ;
+                         rdfs:domain <http://www.cidoc-crm.org/crmtex/TX1_Written_Text> ,
+                                     <https://cidoc-crm.org/crmtex/TX10_Style#Création_type> .
+
+
+###  http://erlangen-crm.org/current/P53_has_former_or_current_location
+current:P53_has_former_or_current_location rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf ontology2:where ;
+                                           rdfs:domain current:Object .
+
+
+###  http://erlangen-crm.org/current/P56_bears_feature
+current:P56_bears_feature rdf:type owl:ObjectProperty ;
+                          owl:inverseOf current:P56i_is_found_on .
+
+
+###  http://erlangen-crm.org/current/P56i_is_found_on
+current:P56i_is_found_on rdf:type owl:ObjectProperty ;
+                         rdfs:domain ontology1:Inscription ;
+                         rdfs:range current:E84_Information_Carrier .
+
+
+###  http://erlangen-crm.org/current/P7_took_place_at
+current:P7_took_place_at rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         rdfs:domain <https://cidoc-crm.org/crmtex/TX10_Style#Création_type> ;
+                         rdfs:range ontology2:Place .
+
+
+###  http://erlangen-crm.org/current/P94_has_created
+current:P94_has_created rdf:type owl:ObjectProperty ;
+                        rdfs:domain <https://cidoc-crm.org/crmtex/TX10_Style#Création_type> ;
+                        rdfs:range current:Style_épigraphique .
+
+
+###  http://nomisma.org/ontology#hasEndDate
+ontology:hasEndDate rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf current:P4_has_time-span ;
+                    rdfs:domain current:E84_Information_Carrier .
+
+
+###  http://nomisma.org/ontology#hasStartDate
+ontology:hasStartDate rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf current:P4_has_time-span ;
+                      rdfs:domain current:E84_Information_Carrier .
+
+
+###  http://nomisma.org/ontology#representsObjectType
+ontology:representsObjectType rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf ontology:hasObjectType ;
+                              rdfs:domain current:E84_Information_Carrier .
+
+
+###  http://www.cidoc-crm.org/crmtex/TXP8_has_component
+<http://www.cidoc-crm.org/crmtex/TXP8_has_component> rdf:type owl:ObjectProperty ;
+                                                     rdfs:subPropertyOf current:P46_is_composed_of ;
+                                                     rdfs:domain ontology1:Inscription ,
+                                                                 <http://www.cidoc-crm.org/crmtex/TX1_Written_Text> ;
+                                                     rdfs:range <http://www.cidoc-crm.org/crmtex/TX9_Glyph> .
+
+
+###  http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#hasProductionDate
+EPNet-ONTOP_Ontology:hasProductionDate rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf current:P4_has_time-span ;
+                                       rdfs:domain current:E84_Information_Carrier .
+
+
+###  http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#isTranscribedBy
+EPNet-ONTOP_Ontology:isTranscribedBy rdf:type owl:ObjectProperty ;
+                                     rdfs:domain EPNet-ONTOP_Ontology:Inscription ;
+                                     rdfs:range <http://www.cidoc-crm.org/crmtex/TX6_Transcription> .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdfs:domain <http://www.cidoc-crm.org/crmtex/TX6_Transcription> ;
+                      rdfs:range :Edition .
+
+
+###  https://nomisma.org/ontology#representsObjectType
+<https://nomisma.org/ontology#representsObjectType> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://w3id.org/epont/ontology/carriesText
+:carriesText rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf current:P56_bears_feature ;
+             rdfs:domain current:E84_Information_Carrier ;
+             rdfs:range ontology1:Inscription .
+
+
+###  https://w3id.org/epont/ontology/hasEdition
+:hasEdition rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf current:P94_has_created ;
+            rdfs:domain <http://www.cidoc-crm.org/crmtex/TX6_Transcription> ;
+            rdfs:range :Edition .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://edh-www.adw.uni-heidelberg.de/edh/ontology#Contributor
+ontology1:Contributor rdf:type owl:Class ;
+                      rdfs:subClassOf ontology2:Person .
+
+
+###  http://edh-www.adw.uni-heidelberg.de/edh/ontology#Inscription
+ontology1:Inscription rdf:type owl:Class ;
+                      owl:equivalentClass EPNet-ONTOP_Ontology:Inscription ;
+                      rdfs:subClassOf <http://www.cidoc-crm.org/crmtex/TX1_Written_Text> .
+
+
+###  http://edh-www.adw.uni-heidelberg.de/edh/ontology#TypeOfInscription
+ontology1:TypeOfInscription rdf:type owl:Class .
+
+
+###  http://edh-www.adw.uni-heidelberg.de/edh/ontology#TypeOfMonument
+ontology1:TypeOfMonument rdf:type owl:Class .
+
+
+###  http://edh-www.adw.uni-heidelberg.de/edh/ontology#Workstatus
+ontology1:Workstatus rdf:type owl:Class ;
+                     rdfs:label "Workstatus" .
+
+
+###  http://erlangen-crm.org/current/A
+current:A rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/B
+current:B rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/C
+current:C rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/D
+current:D rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/E
+current:E rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/E21_Person
+current:E21_Person rdf:type owl:Class ;
+                   owl:equivalentClass ontology2:Person .
+
+
+###  http://erlangen-crm.org/current/E2_Temporal_Entity
+current:E2_Temporal_Entity rdf:type owl:Class .
+
+
+###  http://erlangen-crm.org/current/E36_Visual_Item
+current:E36_Visual_Item rdf:type owl:Class .
+
+
+###  http://erlangen-crm.org/current/E39_Actor
+current:E39_Actor rdf:type owl:Class ;
+                  owl:equivalentClass ontology2:Agent ;
+                  rdfs:subClassOf ontology2:Person .
+
+
+###  http://erlangen-crm.org/current/E42_Identifier
+current:E42_Identifier rdf:type owl:Class .
+
+
+###  http://erlangen-crm.org/current/E52_Time-Span
+current:E52_Time-Span rdf:type owl:Class .
+
+
+###  http://erlangen-crm.org/current/E53_Time-Span
+current:E53_Time-Span rdf:type owl:Class ;
+                      rdfs:subClassOf current:E2_Temporal_Entity .
+
+
+###  http://erlangen-crm.org/current/E55_Type
+current:E55_Type rdf:type owl:Class .
+
+
+###  http://erlangen-crm.org/current/E65_Creation
+current:E65_Creation rdf:type owl:Class .
+
+
+###  http://erlangen-crm.org/current/E73_Information_Object
+current:E73_Information_Object rdf:type owl:Class .
+
+
+###  http://erlangen-crm.org/current/E74_Group
+current:E74_Group rdf:type owl:Class ;
+                  owl:equivalentClass ontology2:Group .
+
+
+###  http://erlangen-crm.org/current/E84_Information_Carrier
+current:E84_Information_Carrier rdf:type owl:Class .
+
+
+###  http://erlangen-crm.org/current/F
+current:F rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/G
+current:G rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/H
+current:H rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/I
+current:I rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/Image
+current:Image rdf:type owl:Class ;
+              rdfs:subClassOf current:E36_Visual_Item .
+
+
+###  http://erlangen-crm.org/current/K
+current:K rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/L
+current:L rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/M
+current:M rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/N
+current:N rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/O
+current:O rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/Object
+current:Object rdf:type owl:Class ;
+               rdfs:subClassOf current:E84_Information_Carrier .
+
+
+###  http://erlangen-crm.org/current/P
+current:P rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/Q
+current:Q rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/R
+current:R rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/S
+current:S rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/Spatial_Coordinates
+current:Spatial_Coordinates rdf:type owl:Class ;
+                            rdfs:subClassOf current:E42_Identifier .
+
+
+###  http://erlangen-crm.org/current/Style_épigraphique
+current:Style_épigraphique rdf:type owl:Class ;
+                           rdfs:subClassOf current:E55_Type .
+
+
+###  http://erlangen-crm.org/current/T
+current:T rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/V
+current:V rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/X
+current:X rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/Y
+current:Y rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/Z
+current:Z rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+
+###  http://erlangen-crm.org/current/dot
+current:dot rdf:type owl:Class ;
+            rdfs:subClassOf current:E73_Information_Object .
+
+
+###  http://erlangen-crm.org/current/hedera
+current:hedera rdf:type owl:Class ;
+               rdfs:subClassOf current:E73_Information_Object .
+
+
+###  http://lawd.info/ontology/Agent
+ontology2:Agent rdf:type owl:Class ;
+                rdfs:subClassOf ontology2:Person ;
+                rdfs:label "Agent" .
+
+
+###  http://lawd.info/ontology/Edition
+ontology2:Edition rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.cidoc-crm.org/crmtex/TX1_Written_Text> .
+
+
+###  http://lawd.info/ontology/Group
+ontology2:Group rdf:type owl:Class ;
+                rdfs:label "Group" .
+
+
+###  http://lawd.info/ontology/Person
+ontology2:Person rdf:type owl:Class .
+
+
+###  http://lawd.info/ontology/Place
+ontology2:Place rdf:type owl:Class ;
+                owl:equivalentClass EPNet-ONTOP_Ontology:Place ;
+                rdfs:label "Place" .
+
+
+###  http://www.cidoc-crm.org/crmtex/TX1_Written_Text
+<http://www.cidoc-crm.org/crmtex/TX1_Written_Text> rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/crmtex/TX2_Writing
+<http://www.cidoc-crm.org/crmtex/TX2_Writing> rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/crmtex/TX5_Reading
+<http://www.cidoc-crm.org/crmtex/TX5_Reading> rdf:type owl:Class ;
+                                              rdfs:subClassOf ontology2:Person .
+
+
+###  http://www.cidoc-crm.org/crmtex/TX6_Transcription
+<http://www.cidoc-crm.org/crmtex/TX6_Transcription> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex/TX1_Written_Text> .
+
+
+###  http://www.cidoc-crm.org/crmtex/TX9_Glyph
+<http://www.cidoc-crm.org/crmtex/TX9_Glyph> rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/crmtex//TX8_Grapheme
+<http://www.cidoc-crm.org/crmtex//TX8_Grapheme> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#Inscription
+EPNet-ONTOP_Ontology:Inscription rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://www.cidoc-crm.org/crmtex/TX1_Written_Text> .
+
+
+###  http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#Person
+EPNet-ONTOP_Ontology:Person rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#Place
+EPNet-ONTOP_Ontology:Place rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#TemporalEntity
+EPNet-ONTOP_Ontology:TemporalEntity rdf:type owl:Class ;
+                                    rdfs:subClassOf current:E2_Temporal_Entity .
+
+
+###  https://cidoc-crm.org/crmtex/TX10_Style#Création_type
+<https://cidoc-crm.org/crmtex/TX10_Style#Création_type> rdf:type owl:Class ;
+                                                        rdfs:subClassOf current:E65_Creation .
+
+
+###  https://w3id.org/epont/ontology/Edition
+:Edition rdf:type owl:Class ;
+         rdfs:subClassOf ontology2:Edition ;
+         rdfs:comment "The edition of an inscription, which is often a part, with a numeric identifier, of a corpus of inscriptions, or is published within a specific article which may or may not solely be devoted to that edition. This is a different concept from that of a critical edition, and of an edition of a book for example." ;
+         rdfs:label "Epigraphic Edition" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://erlangen-crm.org/current/A1
+current:A1 rdf:type owl:NamedIndividual ,
+                    current:A ;
+           current:P2_has_type current:Style_A1 .
+
+
+###  http://erlangen-crm.org/current/A2
+current:A2 rdf:type owl:NamedIndividual ,
+                    current:A ;
+           current:P2_has_type current:Style_A2 .
+
+
+###  http://erlangen-crm.org/current/A3
+current:A3 rdf:type owl:NamedIndividual ,
+                    current:A ;
+           current:P2_has_type current:Style_A3 .
+
+
+###  http://erlangen-crm.org/current/A4
+current:A4 rdf:type owl:NamedIndividual ,
+                    current:A ;
+           current:P2_has_type current:Style_A4 .
+
+
+###  http://erlangen-crm.org/current/B1
+current:B1 rdf:type owl:NamedIndividual ,
+                    current:B ;
+           current:P2_has_type current:Style_B1 .
+
+
+###  http://erlangen-crm.org/current/B2
+current:B2 rdf:type owl:NamedIndividual ,
+                    current:B ;
+           current:P2_has_type current:Style_B2 .
+
+
+###  http://erlangen-crm.org/current/C1
+current:C1 rdf:type owl:NamedIndividual ,
+                    current:C ;
+           current:P2_has_type current:Style_C1 .
+
+
+###  http://erlangen-crm.org/current/C2
+current:C2 rdf:type owl:NamedIndividual ,
+                    current:C .
+
+
+###  http://erlangen-crm.org/current/Création_type
+current:Création_type rdf:type owl:NamedIndividual ,
+                               <https://cidoc-crm.org/crmtex/TX10_Style#Création_type> ;
+                      current:P94_has_created current:Style_A1 ,
+                                              current:Style_A2 ,
+                                              current:Style_A3 ,
+                                              current:Style_A4 ,
+                                              current:Style_B1 ,
+                                              current:Style_B2 ,
+                                              current:Style_C1 ,
+                                              current:Style_C2 ,
+                                              current:Style_D1 ,
+                                              current:Style_E1 ,
+                                              current:Style_E2 ,
+                                              current:Style_E3 ,
+                                              current:Style_F1 ,
+                                              current:Style_F2 ,
+                                              current:Style_F3 ,
+                                              current:Style_G1 ,
+                                              current:Style_G2 ,
+                                              current:Style_H1 ,
+                                              current:Style_I1 ,
+                                              current:Style_K1 ,
+                                              current:Style_K2 ,
+                                              current:Style_L1 ,
+                                              current:Style_L2 ,
+                                              current:Style_M1 ,
+                                              current:Style_M2 ,
+                                              current:Style_M3 ,
+                                              current:Style_N1 ,
+                                              current:Style_N2 ,
+                                              current:Style_O1 ,
+                                              current:Style_O2 ,
+                                              current:Style_O3 ,
+                                              current:Style_P1 ,
+                                              current:Style_P2 ,
+                                              current:Style_P3 ,
+                                              current:Style_Q1 ,
+                                              current:Style_Q2 ,
+                                              current:Style_Q3 ,
+                                              current:Style_R1 ,
+                                              current:Style_R2 ,
+                                              current:Style_R3 ,
+                                              current:Style_S1 ,
+                                              current:Style_S2 ,
+                                              current:Style_T1 ,
+                                              current:Style_V1 ,
+                                              current:Style_X1 .
+
+
+###  http://erlangen-crm.org/current/D1
+current:D1 rdf:type owl:NamedIndividual ,
+                    current:D ;
+           current:P2_has_type current:Style_D1 .
+
+
+###  http://erlangen-crm.org/current/E1
+current:E1 rdf:type owl:NamedIndividual ,
+                    current:E ;
+           current:P2_has_type current:Style_E1 .
+
+
+###  http://erlangen-crm.org/current/E2
+current:E2 rdf:type owl:NamedIndividual ,
+                    current:E ;
+           current:P2_has_type current:Style_E2 .
+
+
+###  http://erlangen-crm.org/current/E3
+current:E3 rdf:type owl:NamedIndividual ,
+                    current:E ;
+           current:P2_has_type current:Style_E3 .
+
+
+###  http://erlangen-crm.org/current/F1
+current:F1 rdf:type owl:NamedIndividual ,
+                    current:F ;
+           current:P2_has_type current:Style_F1 .
+
+
+###  http://erlangen-crm.org/current/F2
+current:F2 rdf:type owl:NamedIndividual ,
+                    current:F ;
+           current:P2_has_type current:Style_F2 .
+
+
+###  http://erlangen-crm.org/current/F3
+current:F3 rdf:type owl:NamedIndividual ,
+                    current:F ;
+           current:P2_has_type current:Style_F3 .
+
+
+###  http://erlangen-crm.org/current/G1
+current:G1 rdf:type owl:NamedIndividual ,
+                    current:G ;
+           current:P2_has_type current:Style_G1 .
+
+
+###  http://erlangen-crm.org/current/G2
+current:G2 rdf:type owl:NamedIndividual ,
+                    current:G ;
+           current:P2_has_type current:Style_G2 .
+
+
+###  http://erlangen-crm.org/current/H1
+current:H1 rdf:type owl:NamedIndividual ,
+                    current:H ;
+           current:P2_has_type current:Style_H1 .
+
+
+###  http://erlangen-crm.org/current/I1
+current:I1 rdf:type owl:NamedIndividual ,
+                    current:I ;
+           current:P2_has_type current:Style_I1 .
+
+
+###  http://erlangen-crm.org/current/K1
+current:K1 rdf:type owl:NamedIndividual ,
+                    current:K ;
+           current:P2_has_type current:Style_K1 .
+
+
+###  http://erlangen-crm.org/current/K2
+current:K2 rdf:type owl:NamedIndividual ,
+                    current:K ;
+           current:P2_has_type current:Style_K2 .
+
+
+###  http://erlangen-crm.org/current/L1
+current:L1 rdf:type owl:NamedIndividual ,
+                    current:L ;
+           current:P2_has_type current:Style_L1 .
+
+
+###  http://erlangen-crm.org/current/L2
+current:L2 rdf:type owl:NamedIndividual ,
+                    current:L ;
+           current:P2_has_type current:Style_L2 .
+
+
+###  http://erlangen-crm.org/current/M1
+current:M1 rdf:type owl:NamedIndividual ,
+                    current:M ;
+           current:P2_has_type current:Style_M1 .
+
+
+###  http://erlangen-crm.org/current/M2
+current:M2 rdf:type owl:NamedIndividual ,
+                    current:M ;
+           current:P2_has_type current:Style_M2 .
+
+
+###  http://erlangen-crm.org/current/M3
+current:M3 rdf:type owl:NamedIndividual ,
+                    current:M ;
+           current:P2_has_type current:Style_M3 .
+
+
+###  http://erlangen-crm.org/current/N1
+current:N1 rdf:type owl:NamedIndividual ,
+                    current:N ;
+           current:P2_has_type current:Style_N1 .
+
+
+###  http://erlangen-crm.org/current/N2
+current:N2 rdf:type owl:NamedIndividual ,
+                    current:N ;
+           current:P2_has_type current:Style_N2 .
+
+
+###  http://erlangen-crm.org/current/O1
+current:O1 rdf:type owl:NamedIndividual ,
+                    current:O ;
+           current:P2_has_type current:Style_O1 .
+
+
+###  http://erlangen-crm.org/current/O2
+current:O2 rdf:type owl:NamedIndividual ,
+                    current:O ;
+           current:P2_has_type current:Style_O2 .
+
+
+###  http://erlangen-crm.org/current/O3
+current:O3 rdf:type owl:NamedIndividual ,
+                    current:O ;
+           current:P2_has_type current:Style_O3 .
+
+
+###  http://erlangen-crm.org/current/P1
+current:P1 rdf:type owl:NamedIndividual ,
+                    current:P ;
+           current:P2_has_type current:Style_P1 .
+
+
+###  http://erlangen-crm.org/current/P2
+current:P2 rdf:type owl:NamedIndividual ,
+                    current:P ;
+           current:P2_has_type current:Style_P2 .
+
+
+###  http://erlangen-crm.org/current/P3
+current:P3 rdf:type owl:NamedIndividual ,
+                    current:P ;
+           current:P2_has_type current:Style_P3 .
+
+
+###  http://erlangen-crm.org/current/Q1
+current:Q1 rdf:type owl:NamedIndividual ,
+                    current:Q ;
+           current:P2_has_type current:Style_Q1 .
+
+
+###  http://erlangen-crm.org/current/Q2
+current:Q2 rdf:type owl:NamedIndividual ,
+                    current:Q ;
+           current:P2_has_type current:Style_Q2 .
+
+
+###  http://erlangen-crm.org/current/Q3
+current:Q3 rdf:type owl:NamedIndividual ,
+                    current:Q ;
+           current:P2_has_type current:Style_Q3 .
+
+
+###  http://erlangen-crm.org/current/R1
+current:R1 rdf:type owl:NamedIndividual ,
+                    current:R ;
+           current:P2_has_type current:Style_R1 .
+
+
+###  http://erlangen-crm.org/current/R2
+current:R2 rdf:type owl:NamedIndividual ,
+                    current:R ;
+           current:P2_has_type current:Style_R2 .
+
+
+###  http://erlangen-crm.org/current/R3
+current:R3 rdf:type owl:NamedIndividual ,
+                    current:R ;
+           current:P2_has_type current:Style_R3 .
+
+
+###  http://erlangen-crm.org/current/S1
+current:S1 rdf:type owl:NamedIndividual ,
+                    current:S ;
+           current:P2_has_type current:Style_S1 .
+
+
+###  http://erlangen-crm.org/current/S2
+current:S2 rdf:type owl:NamedIndividual ,
+                    current:S ;
+           current:P2_has_type current:Style_S2 .
+
+
+###  http://erlangen-crm.org/current/Style_A1
+current:Style_A1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_A2
+current:Style_A2 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_A3
+current:Style_A3 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_A4
+current:Style_A4 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_B1
+current:Style_B1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_B2
+current:Style_B2 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_C1
+current:Style_C1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_C2
+current:Style_C2 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_D1
+current:Style_D1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_E1
+current:Style_E1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_E2
+current:Style_E2 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_E3
+current:Style_E3 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_F1
+current:Style_F1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_F2
+current:Style_F2 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_F3
+current:Style_F3 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_G1
+current:Style_G1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_G2
+current:Style_G2 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_H1
+current:Style_H1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_I1
+current:Style_I1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_K1
+current:Style_K1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_K2
+current:Style_K2 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_L1
+current:Style_L1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_L2
+current:Style_L2 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_M1
+current:Style_M1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_M2
+current:Style_M2 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_M3
+current:Style_M3 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_N1
+current:Style_N1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_N2
+current:Style_N2 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_O1
+current:Style_O1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_O2
+current:Style_O2 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_O3
+current:Style_O3 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_P1
+current:Style_P1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_P2
+current:Style_P2 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_P3
+current:Style_P3 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_Q1
+current:Style_Q1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_Q2
+current:Style_Q2 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_Q3
+current:Style_Q3 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_R1
+current:Style_R1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_R2
+current:Style_R2 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_R3
+current:Style_R3 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_S1
+current:Style_S1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_S2
+current:Style_S2 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_T1
+current:Style_T1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_V1
+current:Style_V1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/Style_X1
+current:Style_X1 rdf:type owl:NamedIndividual ,
+                          current:Style_épigraphique ;
+                 current:P4_has_time-span current:VIème_siècle ,
+                                          current:Vème_siècle .
+
+
+###  http://erlangen-crm.org/current/T1
+current:T1 rdf:type owl:NamedIndividual ,
+                    current:T ;
+           current:P2_has_type current:Style_T1 .
+
+
+###  http://erlangen-crm.org/current/V1
+current:V1 rdf:type owl:NamedIndividual ,
+                    current:V ;
+           current:P2_has_type current:Style_V1 .
+
+
+###  http://erlangen-crm.org/current/VIème_siècle
+current:VIème_siècle rdf:type owl:NamedIndividual ,
+                              current:E53_Time-Span .
+
+
+###  http://erlangen-crm.org/current/Vème_siècle
+current:Vème_siècle rdf:type owl:NamedIndividual ,
+                             current:E53_Time-Span .
+
+
+###  http://erlangen-crm.org/current/X1
+current:X1 rdf:type owl:NamedIndividual ,
+                    current:X ;
+           current:P2_has_type current:Style_X1 .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
