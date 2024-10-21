@@ -1,0 +1,800 @@
+@prefix : <https://w3id.org/epont/ontology/> .
+@prefix EPNet-ONTOP_Ontology: <http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#> .
+@prefix current: <http://erlangen-crm.org/current/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ontology: <http://nomisma.org/ontology#> .
+@prefix ontology1: <http://edh-www.adw.uni-heidelberg.de/edh/ontology#> .
+@prefix ontology2: <http://lawd.info/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ontology1:Contributor a owl:Class ;
+    rdfs:subClassOf ontology2:Person .
+
+ontology1:hasDiplomaticText a owl:AnnotationProperty ;
+    rdfs:domain <http://www.cidoc-crm.org/crmtex/TX6_Transcription> .
+
+ontology1:hasEditionText a owl:AnnotationProperty ;
+    rdfs:domain :Edition .
+
+ontology1:hasWorkstatus a owl:ObjectProperty ;
+    rdfs:domain <http://www.cidoc-crm.org/crmtex/TX6_Transcription> ;
+    rdfs:range ontology1:Workstatus .
+
+ontology1:representsTypeOfInscription a owl:ObjectProperty ;
+    rdfs:domain ontology1:Inscription ;
+    rdfs:range ontology1:TypeOfInscription .
+
+ontology1:representsTypeOfMonument a owl:AnnotationProperty,
+        owl:ObjectProperty ;
+    rdfs:domain current:E84_Information_Carrier ;
+    rdfs:range ontology1:TypeOfMonument ;
+    rdfs:subPropertyOf ontology:hasObjectType ;
+    owl:equivalentProperty <https://nomisma.org/ontology#representsObjectType> .
+
+current:A1 a current:A,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_A1 .
+
+current:A2 a current:A,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_A2 .
+
+current:A3 a current:A,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_A3 .
+
+current:A4 a current:A,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_A4 .
+
+current:B1 a current:B,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_B1 .
+
+current:B2 a current:B,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_B2 .
+
+current:C1 a current:C,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_C1 .
+
+current:C2 a current:C,
+        owl:NamedIndividual .
+
+current:Création_type a owl:NamedIndividual,
+        <https://cidoc-crm.org/crmtex/TX10_Style#Création_type> ;
+    current:P94_has_created current:Style_A1,
+        current:Style_A2,
+        current:Style_A3,
+        current:Style_A4,
+        current:Style_B1,
+        current:Style_B2,
+        current:Style_C1,
+        current:Style_C2,
+        current:Style_D1,
+        current:Style_E1,
+        current:Style_E2,
+        current:Style_E3,
+        current:Style_F1,
+        current:Style_F2,
+        current:Style_F3,
+        current:Style_G1,
+        current:Style_G2,
+        current:Style_H1,
+        current:Style_I1,
+        current:Style_K1,
+        current:Style_K2,
+        current:Style_L1,
+        current:Style_L2,
+        current:Style_M1,
+        current:Style_M2,
+        current:Style_M3,
+        current:Style_N1,
+        current:Style_N2,
+        current:Style_O1,
+        current:Style_O2,
+        current:Style_O3,
+        current:Style_P1,
+        current:Style_P2,
+        current:Style_P3,
+        current:Style_Q1,
+        current:Style_Q2,
+        current:Style_Q3,
+        current:Style_R1,
+        current:Style_R2,
+        current:Style_R3,
+        current:Style_S1,
+        current:Style_S2,
+        current:Style_T1,
+        current:Style_V1,
+        current:Style_X1 .
+
+current:D1 a current:D,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_D1 .
+
+current:E1 a current:E,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_E1 .
+
+current:E2 a current:E,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_E2 .
+
+current:E21_Person a owl:Class ;
+    owl:equivalentClass ontology2:Person .
+
+current:E3 a current:E,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_E3 .
+
+current:E39_Actor a owl:Class ;
+    rdfs:subClassOf ontology2:Person ;
+    owl:equivalentClass ontology2:Agent .
+
+current:E74_Group a owl:Class ;
+    owl:equivalentClass ontology2:Group .
+
+current:F1 a current:F,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_F1 .
+
+current:F2 a current:F,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_F2 .
+
+current:F3 a current:F,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_F3 .
+
+current:G1 a current:G,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_G1 .
+
+current:G2 a current:G,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_G2 .
+
+current:H1 a current:H,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_H1 .
+
+current:I1 a current:I,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_I1 .
+
+current:K1 a current:K,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_K1 .
+
+current:K2 a current:K,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_K2 .
+
+current:L1 a current:L,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_L1 .
+
+current:L2 a current:L,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_L2 .
+
+current:M1 a current:M,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_M1 .
+
+current:M2 a current:M,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_M2 .
+
+current:M3 a current:M,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_M3 .
+
+current:N1 a current:N,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_N1 .
+
+current:N2 a current:N,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_N2 .
+
+current:O1 a current:O,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_O1 .
+
+current:O2 a current:O,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_O2 .
+
+current:O3 a current:O,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_O3 .
+
+current:O8_Was_observed_by a owl:ObjectProperty ;
+    rdfs:domain ontology1:Inscription ;
+    rdfs:range <http://www.cidoc-crm.org/crmtex/TX5_Reading> .
+
+current:P1 a current:P,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_P1 .
+
+current:P138_represents a owl:ObjectProperty ;
+    rdfs:domain current:Image ;
+    rdfs:range <http://www.cidoc-crm.org/crmtex/TX9_Glyph> .
+
+current:P138i_has_represation a owl:ObjectProperty ;
+    rdfs:domain current:E84_Information_Carrier ;
+    rdfs:range current:Image .
+
+current:P168_place_is_defined_by a owl:ObjectProperty ;
+    rdfs:domain <http://www.cidoc-crm.org/crmtex/TX9_Glyph> ;
+    rdfs:range current:Spatial_Coordinates .
+
+current:P2 a current:P,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_P2 .
+
+current:P2_has_type a owl:ObjectProperty ;
+    rdfs:domain ontology1:Inscription,
+        <http://www.cidoc-crm.org/crmtex//TX8_Grapheme>,
+        <http://www.cidoc-crm.org/crmtex/TX9_Glyph> ;
+    rdfs:range current:E55_Type,
+        current:E73_Information_Object,
+        <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:P3 a current:P,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_P3 .
+
+current:P53_has_former_or_current_location a owl:AnnotationProperty,
+        owl:ObjectProperty ;
+    rdfs:domain current:Object ;
+    rdfs:range ontology2:Place ;
+    rdfs:subPropertyOf ontology2:where .
+
+current:P7_took_place_at a owl:ObjectProperty ;
+    rdfs:domain <https://cidoc-crm.org/crmtex/TX10_Style#Création_type> ;
+    rdfs:range ontology2:Place ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+current:Q1 a current:Q,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_Q1 .
+
+current:Q2 a current:Q,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_Q2 .
+
+current:Q3 a current:Q,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_Q3 .
+
+current:R1 a current:R,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_R1 .
+
+current:R2 a current:R,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_R2 .
+
+current:R3 a current:R,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_R3 .
+
+current:S1 a current:S,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_S1 .
+
+current:S2 a current:S,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_S2 .
+
+current:T1 a current:T,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_T1 .
+
+current:V1 a current:V,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_V1 .
+
+current:X1 a current:X,
+        owl:NamedIndividual ;
+    current:P2_has_type current:Style_X1 .
+
+current:Y a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:Z a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:dot a owl:Class ;
+    rdfs:subClassOf current:E73_Information_Object .
+
+current:hedera a owl:Class ;
+    rdfs:subClassOf current:E73_Information_Object .
+
+ontology:hasDepth a owl:AnnotationProperty ;
+    rdfs:subPropertyOf current:P43_has_dimension .
+
+ontology:hasDiameter a owl:AnnotationProperty ;
+    rdfs:subPropertyOf current:P43_has_dimension .
+
+ontology:hasEndDate a owl:AnnotationProperty,
+        owl:ObjectProperty ;
+    rdfs:domain current:E84_Information_Carrier ;
+    rdfs:subPropertyOf current:P4_has_time-span .
+
+ontology:hasHeight a owl:AnnotationProperty ;
+    rdfs:subPropertyOf current:P43_has_dimension .
+
+ontology:hasMaterial a owl:AnnotationProperty ;
+    rdfs:domain current:E84_Information_Carrier ;
+    rdfs:subPropertyOf current:P45_consists_of .
+
+ontology:hasStartDate a owl:AnnotationProperty,
+        owl:ObjectProperty ;
+    rdfs:domain current:E84_Information_Carrier ;
+    rdfs:subPropertyOf current:P4_has_time-span .
+
+ontology:hasWeight a owl:AnnotationProperty ;
+    rdfs:subPropertyOf current:P43_has_dimension .
+
+ontology:hasWidth a owl:AnnotationProperty ;
+    rdfs:subPropertyOf current:P43_has_dimension .
+
+ontology:representsObjectType a owl:AnnotationProperty ;
+    rdfs:domain current:E84_Information_Carrier ;
+    rdfs:range ontology1:TypeOfMonument ;
+    rdfs:subPropertyOf ontology:hasObjectType .
+
+dc:language a owl:AnnotationProperty .
+
+dc:title a owl:AnnotationProperty .
+
+dcterms:creator a owl:AnnotationProperty .
+
+dcterms:description a owl:AnnotationProperty .
+
+<http://www.cidoc-crm.org/crmtex/TX2_Writing> a owl:Class .
+
+<http://www.cidoc-crm.org/crmtex/TXP8_has_component> a owl:ObjectProperty ;
+    rdfs:domain ontology1:Inscription,
+        <http://www.cidoc-crm.org/crmtex/TX1_Written_Text> ;
+    rdfs:range <http://www.cidoc-crm.org/crmtex/TX9_Glyph> ;
+    rdfs:subPropertyOf current:P46_is_composed_of .
+
+EPNet-ONTOP_Ontology:Person a owl:Class .
+
+EPNet-ONTOP_Ontology:hasProductionDate a owl:AnnotationProperty,
+        owl:ObjectProperty ;
+    rdfs:domain current:E84_Information_Carrier ;
+    rdfs:subPropertyOf current:P4_has_time-span .
+
+EPNet-ONTOP_Ontology:isTranscribedBy a owl:ObjectProperty ;
+    rdfs:domain EPNet-ONTOP_Ontology:Inscription ;
+    rdfs:range <http://www.cidoc-crm.org/crmtex/TX6_Transcription> .
+
+: a owl:Ontology ;
+    dc:language :en ;
+    dc:title "Epigraphic Ontology" ;
+    dcterms:creator "Achille Felicetti",
+        "Francesca Murano",
+        "Frank Grieshaber",
+        "Jonathan Prag",
+        "Pietro Maria Liuzzo",
+        "Silvia Evangelisti" ;
+    dcterms:description "This ontology merges LAWD, CRMtex, the EDH Ontology, the EPNet ontology for OBDI and the Execution Technique Ontology, to support modeling of information about inscriptions." ;
+    owl:imports ontology1:,
+        <http://lawd.info/ontology/1.0/>,
+        ontology:,
+        <http://www.cidoc-crm.org/crmtex/0.1/>,
+        <http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology>,
+        <https://w3id.org/executionTechnique/ontology/0.1> ;
+    owl:versionIRI <https://w3id.org/epont/ontology/0.1/> .
+
+:carriesText a owl:ObjectProperty ;
+    rdfs:domain current:E84_Information_Carrier ;
+    rdfs:range ontology1:Inscription ;
+    rdfs:subPropertyOf current:P56_bears_feature .
+
+:hasEdition a owl:ObjectProperty ;
+    rdfs:domain <http://www.cidoc-crm.org/crmtex/TX6_Transcription> ;
+    rdfs:range :Edition ;
+    rdfs:subPropertyOf current:P94_has_created .
+
+ontology1:TypeOfInscription a owl:Class .
+
+ontology1:Workstatus a owl:Class ;
+    rdfs:label "Workstatus" .
+
+current:D a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:E36_Visual_Item a owl:Class .
+
+current:E42_Identifier a owl:Class .
+
+current:E52_Time-Span a owl:Class .
+
+current:E65_Creation a owl:Class .
+
+current:H a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:I a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:P45_consists_of a owl:AnnotationProperty .
+
+current:P46_is_composed_of a owl:ObjectProperty ;
+    rdfs:domain current:E84_Information_Carrier ;
+    rdfs:range current:Object .
+
+current:P56_bears_feature a owl:ObjectProperty ;
+    owl:inverseOf current:P56i_is_found_on .
+
+current:P56i_is_found_on a owl:ObjectProperty ;
+    rdfs:domain ontology1:Inscription ;
+    rdfs:range current:E84_Information_Carrier .
+
+current:P94_has_created a owl:ObjectProperty ;
+    rdfs:domain <https://cidoc-crm.org/crmtex/TX10_Style#Création_type> ;
+    rdfs:range current:Style_épigraphique .
+
+current:Spatial_Coordinates a owl:Class ;
+    rdfs:subClassOf current:E42_Identifier .
+
+current:Style_C2 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle .
+
+current:T a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:V a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:X a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+ontology2:Agent a owl:Class ;
+    rdfs:label "Agent" ;
+    rdfs:subClassOf ontology2:Person .
+
+ontology2:Edition a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex/TX1_Written_Text> .
+
+ontology2:Group a owl:Class ;
+    rdfs:label "Group" .
+
+ontology2:where a owl:AnnotationProperty .
+
+<http://www.cidoc-crm.org/crmtex/TX5_Reading> a owl:Class ;
+    rdfs:subClassOf ontology2:Person .
+
+EPNet-ONTOP_Ontology:Place a owl:Class .
+
+EPNet-ONTOP_Ontology:TemporalEntity a owl:Class ;
+    rdfs:subClassOf current:E2_Temporal_Entity .
+
+<https://nomisma.org/ontology#representsObjectType> a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+ontology1:TypeOfMonument a owl:Class .
+
+current:B a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:C a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:E2_Temporal_Entity a owl:Class .
+
+current:E53_Time-Span a owl:Class ;
+    rdfs:subClassOf current:E2_Temporal_Entity .
+
+current:E55_Type a owl:Class .
+
+current:G a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:Image a owl:Class ;
+    rdfs:subClassOf current:E36_Visual_Item .
+
+current:K a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:L a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:N a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:Object a owl:Class ;
+    rdfs:subClassOf current:E84_Information_Carrier .
+
+current:S a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:Style_A1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:Vème_siècle .
+
+current:Style_A2 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_A3 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:Vème_siècle .
+
+current:Style_A4 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle .
+
+current:Style_B1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_B2 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle .
+
+current:Style_C1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_D1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:Vème_siècle .
+
+current:Style_E1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:Vème_siècle .
+
+current:Style_E2 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_E3 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_F1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:Vème_siècle .
+
+current:Style_F2 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_F3 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_G1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:Vème_siècle .
+
+current:Style_G2 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle .
+
+current:Style_H1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_I1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_K1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_K2 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:Vème_siècle .
+
+current:Style_L1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_L2 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle .
+
+current:Style_M1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_M2 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_M3 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:Vème_siècle .
+
+current:Style_N1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_N2 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_O1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:Vème_siècle .
+
+current:Style_O2 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_O3 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:Vème_siècle .
+
+current:Style_P1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:Vème_siècle .
+
+current:Style_P2 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_P3 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle .
+
+current:Style_Q1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:Vème_siècle .
+
+current:Style_Q2 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:Vème_siècle .
+
+current:Style_Q3 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle .
+
+current:Style_R1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:Vème_siècle .
+
+current:Style_R2 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:Vème_siècle .
+
+current:Style_R3 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle .
+
+current:Style_S1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:Vème_siècle .
+
+current:Style_S2 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_T1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_V1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+current:Style_X1 a current:Style_épigraphique,
+        owl:NamedIndividual ;
+    current:P4_has_time-span current:VIème_siècle,
+        current:Vème_siècle .
+
+ontology2:Place a owl:Class ;
+    rdfs:label "Place" ;
+    owl:equivalentClass EPNet-ONTOP_Ontology:Place .
+
+ontology:hasObjectType a owl:AnnotationProperty .
+
+EPNet-ONTOP_Ontology:Inscription a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex/TX1_Written_Text> .
+
+owl:topObjectProperty rdfs:domain <http://www.cidoc-crm.org/crmtex/TX6_Transcription> ;
+    rdfs:range :Edition .
+
+current:E a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:E73_Information_Object a owl:Class .
+
+current:F a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:M a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:O a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:P a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:P4_has_time-span a owl:AnnotationProperty,
+        owl:ObjectProperty ;
+    rdfs:domain <http://www.cidoc-crm.org/crmtex/TX1_Written_Text>,
+        <https://cidoc-crm.org/crmtex/TX10_Style#Création_type> ;
+    rdfs:range current:E52_Time-Span,
+        EPNet-ONTOP_Ontology:TemporalEntity .
+
+current:Q a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+current:R a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+:Edition a owl:Class ;
+    rdfs:label "Epigraphic Edition" ;
+    rdfs:comment "The edition of an inscription, which is often a part, with a numeric identifier, of a corpus of inscriptions, or is published within a specific article which may or may not solely be devoted to that edition. This is a different concept from that of a critical edition, and of an edition of a book for example." ;
+    rdfs:subClassOf ontology2:Edition .
+
+current:A a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex//TX8_Grapheme> .
+
+<http://www.cidoc-crm.org/crmtex/TX9_Glyph> a owl:Class .
+
+<https://cidoc-crm.org/crmtex/TX10_Style#Création_type> a owl:Class ;
+    rdfs:subClassOf current:E65_Creation .
+
+current:P43_has_dimension a owl:AnnotationProperty .
+
+ontology2:Person a owl:Class .
+
+<http://www.cidoc-crm.org/crmtex/TX6_Transcription> a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex/TX1_Written_Text> .
+
+ontology1:Inscription a owl:Class ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/crmtex/TX1_Written_Text> ;
+    owl:equivalentClass EPNet-ONTOP_Ontology:Inscription .
+
+<http://www.cidoc-crm.org/crmtex/TX1_Written_Text> a owl:Class .
+
+current:E84_Information_Carrier a owl:Class .
+
+<http://www.cidoc-crm.org/crmtex//TX8_Grapheme> a owl:Class .
+
+current:VIème_siècle a current:E53_Time-Span,
+        owl:NamedIndividual .
+
+current:Vème_siècle a current:E53_Time-Span,
+        owl:NamedIndividual .
+
+current:Style_épigraphique a owl:Class ;
+    rdfs:subClassOf current:E55_Type .
+
